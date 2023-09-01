@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.02
+  m_FogColor: {r: 0.21698111, g: 0.21391062, b: 0.21391062, a: 1}
+  m_FogMode: 2
+  m_FogDensity: 0.04
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.6032093, g: 0.4570546, b: 0.41468316, a: 1}
@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.6032093, g: 0.4570546, b: 0.41468316, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+  m_SubtractiveShadowColor: {r: 0.7830189, g: 0.7276166, b: 0.7276166, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: fa8790d08ccb71a459285f77ed63a6bc, type: 2}
   m_HaloStrength: 0.667
   m_FlareStrength: 1
@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &172030270
 Light:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &224481407
 PrefabInstance:
@@ -394,7 +394,7 @@ Transform:
   m_Children:
   - {fileID: 1722709032}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410565922
 GameObject:
@@ -439,7 +439,7 @@ WindZone:
   m_Mode: 0
   m_Radius: 20
   m_WindMain: 1
-  m_WindTurbulence: 1.5
+  m_WindTurbulence: 1.3
   m_WindPulseMagnitude: 0.5
   m_WindPulseFrequency: 0.01
 --- !u!1 &436492877
@@ -504,7 +504,7 @@ Transform:
   m_Children:
   - {fileID: 82570183}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &545106084
 GameObject:
@@ -572,8 +572,8 @@ Light:
   m_InnerSpotAngle: 10.9
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
-    m_Resolution: 2
+    m_Type: 1
+    m_Resolution: 0
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0
@@ -605,7 +605,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -623,14 +623,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566042072}
-  m_LocalRotation: {x: -0.06456607, y: 0.98639226, z: -0.13047811, w: 0.07640082}
-  m_LocalPosition: {x: 382.46, y: 5.77, z: 376.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.08835564, y: 0.02200785, z: 0.004662573, w: 0.99583495}
+  m_LocalPosition: {x: -0.1450001, y: -0.13600084, z: 0.043004952}
+  m_LocalScale: {x: 0.5714287, y: 0.5714286, z: 0.5714284}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 14.332, y: 170.04, z: -8.745}
+  m_Father: {fileID: 1917626855}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 169.877, y: 182.6, z: -179.233}
 --- !u!1001 &682951521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1027,7 +1027,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+  m_BackGroundColor: {r: 0.21568628, g: 0.21568628, b: 0.21568628, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1138,13 +1138,13 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.953, b: 0.803, a: 1}
-  m_Intensity: 1.3
+  m_Intensity: 0.05
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 5
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1304,12 +1304,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 8ee04e1f17f7f5549acabd4c8d8a68c4, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 250
-  m_TreeCrossFadeLength: 30
+  m_TreeDistance: 250
+  m_TreeBillboardDistance: 60
+  m_TreeCrossFadeLength: 60
   m_TreeMaximumFullLODCount: 300
-  m_DetailObjectDistance: 160
-  m_DetailObjectDensity: 0.7
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -2099,6 +2099,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
   m_PrefabInstance: {fileID: 1761250028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1917626855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8021001004253913084, guid: c15f66ce2b9c78d4d89c8c59e56e63cc, type: 3}
+  m_PrefabInstance: {fileID: 682951521}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2095213254
 GameObject:
