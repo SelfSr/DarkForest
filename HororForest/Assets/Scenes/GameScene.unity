@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -511,8 +511,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.006235084, y: -0.9865772, z: 0.038800832, w: 0.15849602}
-  m_LocalPosition: {x: 357.24567, y: 6.9249277, z: 312.47458}
+  m_LocalRotation: {x: -0.000051370364, y: -0.9999507, z: -0.007190083, w: 0.0068499306}
+  m_LocalPosition: {x: 371.45465, y: 10.189918, z: 390.82544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -558,8 +558,8 @@ Light:
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.32
+    m_Bias: 0
+    m_NormalBias: 0.05
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -1003,10 +1003,10 @@ WindZone:
   m_Enabled: 1
   m_Mode: 0
   m_Radius: 20
-  m_WindMain: 0.5
-  m_WindTurbulence: 0.1
-  m_WindPulseMagnitude: 0.8
-  m_WindPulseFrequency: 0.5
+  m_WindMain: 1
+  m_WindTurbulence: 1.5
+  m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01
 --- !u!1 &1463383688
 GameObject:
   m_ObjectHideFlags: 0
