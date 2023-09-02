@@ -150,7 +150,7 @@ MonoBehaviour:
   mainCamera: {fileID: 963194228}
   jumpForce: 3.5
   walkingSpeed: 4.7
-  runningSpeed: 9
+  runningSpeed: 7
   currentSpeed: 0
   targetRange: 0.5
 --- !u!95 &82570185 stripped
@@ -1138,7 +1138,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.953, b: 0.803, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
