@@ -11,7 +11,7 @@ public class CustomCharacterController : MonoBehaviour
     public float currentSpeed;
     private float animationInterpolation = 1f;
 
-    //[SerializeField] private Transform aimTarget;
+    [SerializeField] private Transform aimTarget;
     [SerializeField] private float targetRange = 0.5f;
     void Start()
     {
@@ -67,9 +67,9 @@ public class CustomCharacterController : MonoBehaviour
         {
             anim.SetTrigger("Jump");
         }
-        //Ray desiredTargetRay = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
-        //Vector3 desiredTargetPosition = desiredTargetRay.origin + desiredTargetRay.direction * targetRange;
-        //aimTarget.position = desiredTargetPosition;
+        Ray desiredTargetRay = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
+        Vector3 desiredTargetPosition = desiredTargetRay.origin + desiredTargetRay.direction * targetRange;
+        aimTarget.position = desiredTargetPosition;
     }
     // Update is called once per frame
     void FixedUpdate()
