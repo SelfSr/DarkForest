@@ -17,31 +17,44 @@ public class flashligthSimple : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+            _rig.weight = 0;
+        else if (_stateLight == true)
+            _rig.weight = 1;
         EnableOrDisableLight();
     }
     private void EnableOrDisableLight()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _stateLight == false)
+        if (Input.GetKeyDown(KeyCode.F) && _stateLight == false && IsAnimationPlaying("EnableFlash") == false)
         {
             _rig.weight = 1;
             _animator.SetBool("Enable", true);
-            _lightFlash.enabled = true;
-            _stateLight = true;
-            _soundFlashLight.Play();
             _animator.Play("FlashTake");
             _animator.SetBool("Disable", false);
+            Invoke("EnableFlash", 0.44f);
         }
-        else if (Input.GetKeyDown(KeyCode.F) && _stateLight == true)
+        else if (Input.GetKeyDown(KeyCode.F) && _stateLight == true && IsAnimationPlaying("FlashPutAway") == false)
         {
             _animator.SetBool("Disable", true);
-            _lightFlash.enabled = false;
-            _stateLight = false;
-            _soundFlashLight.Play();
             _animator.Play("FlashPutAway");
             _animator.SetBool("Enable", false);
-            Invoke("SetRigWight", 0.45f);
+            DisableFlash();
+            Invoke("SetRigWight", 0.44f);
         }
     }
+    private void EnableFlash()
+    {
+        _soundFlashLight.Play();
+        _lightFlash.enabled = true;
+        _stateLight = true;
+    }
+    private void DisableFlash()
+    {
+        _lightFlash.enabled = false;
+        _stateLight = false;
+        _soundFlashLight.Play();
+    }
+
     private void SetRigWight()
     {
         _rig.weight = 0;
@@ -52,5 +65,14 @@ public class flashligthSimple : MonoBehaviour
             _lightFlash.enabled = true;
         else if (_stateLight == false)
             _lightFlash.enabled = false;
+    }
+
+    public bool IsAnimationPlaying(string animationName)
+    {
+        var animatorStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        if (animatorStateInfo.IsName(animationName))
+            return true;
+
+        return false;
     }
 }

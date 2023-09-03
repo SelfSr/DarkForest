@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class CustomCharacterController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CustomCharacterController : MonoBehaviour
     public float currentSpeed;
     private float animationInterpolation = 1f;
 
+    [SerializeField] private Rig _rig;
     [SerializeField] private Transform aimTarget;
     [SerializeField] private float targetRange = 0.5f;
     void Start()
@@ -48,7 +50,6 @@ public class CustomCharacterController : MonoBehaviour
             // Зажаты ли еще кнопки A S D?
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                // Если да, то мы идем пешком
                 Walk();
             }
             // Если нет, то тогда бежим!
@@ -72,7 +73,7 @@ public class CustomCharacterController : MonoBehaviour
         aimTarget.position = desiredTargetPosition;
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         // Здесь мы задаем движение персонажа в зависимости от направления в которое смотрит камера
         // Сохраняем направление вперед и вправо от камеры 
