@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 193105811232424698}
   - component: {fileID: 33065013992664210}
   - component: {fileID: 23466419510729776}
-  - component: {fileID: 4321894656304459285}
+  - component: {fileID: 7447345954664609644}
   m_Layer: 0
   m_Name: RedWood 55
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4321894656304459285
+--- !u!136 &7447345954664609644
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,10 +105,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.5351391
-  m_Height: 46.461338
+  m_Radius: 1.494339
+  m_Height: 25.960506
   m_Direction: 1
-  m_Center: {x: 0.02243805, y: 22.100306, z: 0.14372444}
+  m_Center: {x: -0.00010681152, y: 12.4310055, z: 0.013656616}
 --- !u!21 &21440639111565978
 Material:
   serializedVersion: 8
