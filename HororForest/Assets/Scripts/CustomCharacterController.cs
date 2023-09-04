@@ -15,6 +15,7 @@ public class CustomCharacterController : MonoBehaviour
     [SerializeField] private Rig _rig;
     [SerializeField] private Transform aimTarget;
     [SerializeField] private float targetRange = 0.5f;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -72,7 +73,6 @@ public class CustomCharacterController : MonoBehaviour
         Vector3 desiredTargetPosition = desiredTargetRay.origin + desiredTargetRay.direction * targetRange;
         aimTarget.position = desiredTargetPosition;
     }
-    // Update is called once per frame
     void LateUpdate()
     {
         // Здесь мы задаем движение персонажа в зависимости от направления в которое смотрит камера
