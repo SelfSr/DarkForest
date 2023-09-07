@@ -45,6 +45,7 @@ public class StaminaController : MonoBehaviour
     }
     private void UseJumpStamina()
     {
+        _animatorFill.SetBool("Show", true);
         _staminaSlider.value -= 25f;
     }
     public void RecoveryStamina()
