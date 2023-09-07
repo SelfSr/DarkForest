@@ -3,12 +3,15 @@ using UnityEngine.UI;
 
 public class StaminaController : MonoBehaviour
 {
-    public float _stamina;
+    [HideInInspector] public float _stamina;
 
     [SerializeField] private AudioClip[] _environmentSounds;
     [SerializeField] private AudioSource _breathAudio;
     [SerializeField] private AudioSource _defaultBreathAudio;
-    [SerializeField] private Animator _animator;
+
+    [SerializeField] private Animator _animatorCharacter;
+    [SerializeField] private Animator _animatorFill;
+
     [SerializeField] private CustomCharacterController _characterController;
     [SerializeField] private Slider _staminaSlider;
 
@@ -21,15 +24,24 @@ public class StaminaController : MonoBehaviour
         _stamina = _staminaSlider.value;
         if (!_breathAudio.isPlaying && !_defaultBreathAudio.isPlaying && _characterController.currentSpeed < 4.71)
             _defaultBreathAudio.PlayOneShot(_environmentSounds[2]);
+        if (_stamina >= 100)
+        {
+            Image sliderImage = _staminaSlider.GetComponentInChildren<Image>();
+            Color color = sliderImage.color;
+            color.a = 0f;
+            sliderImage.color = color;
+            _animatorFill.SetBool("Show", false);
+        }
     }
     public void UseStamina()
     {
+        _animatorFill.SetBool("Show", true);
         if (!_breathAudio.isPlaying && _stamina < 1)
         {
             _defaultBreathAudio.Stop();
             _breathAudio.PlayOneShot(_environmentSounds[1]);
         }
-        _staminaSlider.value -= 0.25f;
+        _staminaSlider.value -= 0.20f;
     }
     private void UseJumpStamina()
     {
@@ -37,6 +49,6 @@ public class StaminaController : MonoBehaviour
     }
     public void RecoveryStamina()
     {
-        _staminaSlider.value += 0.05f;
+        _staminaSlider.value += 0.08f;
     }
 }

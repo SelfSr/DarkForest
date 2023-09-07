@@ -4399,11 +4399,12 @@ MonoBehaviour:
   _stamina: 100
   _environmentSounds:
   - {fileID: 8300000, guid: caeff2591cfa7b74199f3a58d16c682d, type: 3}
-  - {fileID: 8300000, guid: 0047e6c15a4286a439b8ce5056dec7e1, type: 3}
+  - {fileID: 8300000, guid: 43626f45da6b6cd4ab977926ea97ed9d, type: 3}
   - {fileID: 8300000, guid: fe7a766ac842ee3449733032af236a84, type: 3}
   _breathAudio: {fileID: 1674375662}
   _defaultBreathAudio: {fileID: 1362290243}
-  _animator: {fileID: 1361915466}
+  _animatorCharacter: {fileID: 1361915466}
+  _animatorFill: {fileID: 1523484690}
   _characterController: {fileID: 1361915465}
   _staminaSlider: {fileID: 1980676398}
 --- !u!1 &1362290241
@@ -4450,7 +4451,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4895,6 +4896,7 @@ GameObject:
   - component: {fileID: 1523484687}
   - component: {fileID: 1523484689}
   - component: {fileID: 1523484688}
+  - component: {fileID: 1523484690}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -4935,7 +4937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6226415, g: 0.60342425, b: 0, a: 0.78431374}
+  m_Color: {r: 0.6226415, g: 0.60342425, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4960,6 +4962,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523484686}
   m_CullTransparentMesh: 1
+--- !u!95 &1523484690
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523484686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b8967c519a28564d869225c92d426af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1540717386
 GameObject:
   m_ObjectHideFlags: 0
