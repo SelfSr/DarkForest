@@ -6,7 +6,7 @@ public class ItemCollectionRaycast : MonoBehaviour
     private GameObject _selectedObject;
     private Transform m_Transform;
     private RaycastHit hit;
-    private Ray ray;
+    [HideInInspector] public Ray ray;
 
     private TriggerForOutline _triggerForOutline;
 
@@ -37,6 +37,11 @@ public class ItemCollectionRaycast : MonoBehaviour
                 _triggerForOutline.OffOutline();
                 _triggerForOutline = null;
             }
+        }
+        else if(_triggerForOutline)
+        {
+            _triggerForOutline.OffOutline();
+            _triggerForOutline = null;
         }
     }
 }
