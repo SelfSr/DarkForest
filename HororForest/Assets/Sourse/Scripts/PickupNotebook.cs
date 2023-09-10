@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickupNotebook : MonoBehaviour
 {
     private int _rayDistance = 4;
+    static public int numberNotebook = 0;
 
     [SerializeField] private GameObject _hidedObject;
     [SerializeField] private LayerMask _layerMask;
@@ -15,6 +16,7 @@ public class PickupNotebook : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 _hidedObject.SetActive(false);
+                numberNotebook++;
             }
         }
     }

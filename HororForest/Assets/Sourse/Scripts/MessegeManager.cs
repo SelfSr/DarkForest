@@ -40,7 +40,7 @@ public class MessegeManager : MonoBehaviour
 
     public void SwitchNextPage()
     {
-        if (Convert.ToInt32(_pageNumber.text) < 5)
+        if (Convert.ToInt32(_pageNumber.text) < PickupNotebook.numberNotebook)
         {
             string currentPageText = _pageNumber.text;
             int currentPage = Convert.ToInt32(currentPageText);
