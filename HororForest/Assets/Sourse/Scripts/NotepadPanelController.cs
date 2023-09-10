@@ -7,6 +7,7 @@ public class NotepadPanelController : MonoBehaviour
 
     [SerializeField] private PressTAB _textTABPanel;
     [SerializeField] private GameObject _messegePanel;
+    [SerializeField] private MessegeManager _messegeManager;
 
     private void Update()
     {
@@ -22,10 +23,12 @@ public class NotepadPanelController : MonoBehaviour
                 _isEbablePanel = false;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                _messegeManager.ToggleSwitchPage(true);
                 CloseTABText();
             }
             else if (_isEbablePanel == false && Input.GetKeyDown(KeyCode.Tab))
             {
+                _messegeManager.ToggleSwitchPage(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 _messegePanel.SetActive(false);
