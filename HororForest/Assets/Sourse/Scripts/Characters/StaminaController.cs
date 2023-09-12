@@ -15,7 +15,7 @@ public class StaminaController : MonoBehaviour
     [SerializeField] private CustomCharacterController _characterController;
     [SerializeField] private Slider _staminaSlider;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_staminaSlider.value > 100)
             _staminaSlider.value = 100;
@@ -35,7 +35,7 @@ public class StaminaController : MonoBehaviour
             _defaultBreathAudio.Stop();
             _breathAudio.PlayOneShot(_environmentSounds[1]);
         }
-        _staminaSlider.value -= 0.20f;
+        _staminaSlider.value -= 27f * Time.deltaTime;
     }
     private void UseJumpStamina()
     {
@@ -44,6 +44,6 @@ public class StaminaController : MonoBehaviour
     }
     public void RecoveryStamina()
     {
-        _staminaSlider.value += 0.06f;
+        _staminaSlider.value += 0.15f;
     }
 }
