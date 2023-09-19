@@ -3,17 +3,20 @@ using UnityEngine;
 public class StateNotepad : MonoBehaviour
 {
     [SerializeField] private GameObject _hideObject;
-    [SerializeField] private GameObject _showObject;
+    [SerializeField] private GameObject[] _showObjects;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Invoke("CheckState", 1);
+        Invoke("CheckState", 2);
     }
     private void CheckState()
     {
-        if(_hideObject.activeSelf == false)
+        if (_hideObject.activeSelf == false)
         {
-            _showObject.SetActive(true);
+            foreach (GameObject objectForShow in _showObjects)
+            {
+                objectForShow.SetActive(true);
+            }
         }
     }
 }
