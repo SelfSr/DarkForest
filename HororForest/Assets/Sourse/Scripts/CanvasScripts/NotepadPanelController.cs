@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class NotepadPanelController : MonoBehaviour
 {
-    private bool _isEbableTextTABPanel = true;
-    private bool _isEbablePanel = true;
+    private bool _isEnableTextTABPanel = true;
+    private bool _isEnablePanel = true;
 
     [SerializeField] private PressTAB _textTABPanel;
     [SerializeField] private GameObject _messegePanel;
-    [SerializeField] private MessegeManager _messegeManager;
-    [SerializeField] private MessegeManager _messegeManager2;
+    [SerializeField] private MessegeManager _messageManager1;
+    [SerializeField] private MessegeManager _messageManager2;
 
     private void Update()
     {
@@ -18,33 +18,36 @@ public class NotepadPanelController : MonoBehaviour
     {
         if (_textTABPanel._firstNotepad.activeSelf == false)
         {
-            if (_isEbablePanel && Input.GetKeyDown(KeyCode.Tab))
+            if (_isEnablePanel && Input.GetKeyDown(KeyCode.Tab))
             {
                 _messegePanel.SetActive(true);
-                _isEbablePanel = false;
+                _isEnablePanel = false;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                _messegeManager.ToggleSwitchPage(true);
-                _messegeManager2.ToggleSwitchPage(true);
+                ToggleMessageManagers(true);
                 CloseTABText();
             }
-            else if (_isEbablePanel == false && Input.GetKeyDown(KeyCode.Tab))
+            else if (_isEnablePanel == false && Input.GetKeyDown(KeyCode.Tab))
             {
-                _messegeManager.ToggleSwitchPage(false);
-                _messegeManager2.ToggleSwitchPage(false);
+                ToggleMessageManagers(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 _messegePanel.SetActive(false);
-                _isEbablePanel = true;
+                _isEnablePanel = true;
             }
         }
     }
+    private void ToggleMessageManagers(bool isActive)
+    {
+        _messageManager1.ToggleSwitchPage(isActive);
+        _messageManager2.ToggleSwitchPage(isActive);
+    }
     private void CloseTABText()
     {
-        if (_isEbableTextTABPanel)
+        if (_isEnableTextTABPanel)
         {
             _textTABPanel._textMeshProUGUI.SetActive(false);
-            _isEbableTextTABPanel = false;
+            _isEnableTextTABPanel = false;
         }
     }
 }

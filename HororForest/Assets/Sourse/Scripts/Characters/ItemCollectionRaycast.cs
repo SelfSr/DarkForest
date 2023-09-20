@@ -16,7 +16,6 @@ public class ItemCollectionRaycast : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
         ray = new Ray(transform.position, transform.forward);
         //Debug.DrawRay(m_Transform.position, m_Transform.forward * _distanceRay);
         if (Physics.Raycast(ray, out hit, _distanceRay))
