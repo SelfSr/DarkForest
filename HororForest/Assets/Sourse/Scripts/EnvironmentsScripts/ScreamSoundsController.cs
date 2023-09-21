@@ -39,7 +39,7 @@ public class ScreamSoundsController : MonoBehaviour
     {
         DOTween.Sequence()
                 .Append(_ActionFromTrigger.DOLocalMove(new Vector3(-2.3f, -0.5f, -2f), 2f))
-                .Append(_ActionFromTrigger.DOLocalMove(new Vector3(-7f, -0.5f, 5f), 2f))
+                .Append(_ActionFromTrigger.DOLocalMove(new Vector3(-7f, -0.5f, 5f), 1.5f))
                 .SetEase(Ease.Linear)
                 .SetDelay(_delayToPlaySound);
     }
