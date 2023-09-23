@@ -5,10 +5,10 @@ public class ScreamSoundsController : MonoBehaviour
 {
 
     [Header("Sound")]
-    [SerializeField] private bool _isAnimateTriggerAction = true;
-    [SerializeField] private Transform _ActionFromTrigger;
     [SerializeField] private float _delayToPlaySound;
     [SerializeField] private AudioSource _screamsSound;
+    [SerializeField] private bool _isHideObjects = false;
+    [SerializeField] private GameObject[] _hideObjects;
 
     [Header("Scream")]
     [SerializeField] private bool _isShowScream = false;
@@ -26,8 +26,6 @@ public class ScreamSoundsController : MonoBehaviour
         if (_isOnePlayScream)
         {
             Invoke("PlaySound", _delayToPlaySound);
-            if (_isAnimateTriggerAction)
-                AnimateTriggerAction();
             if (_isShowScream)
                 Invoke("ShowScreamObject", _delayToShowScream);
             if (_isExistenceOtherScreams)
@@ -35,16 +33,11 @@ public class ScreamSoundsController : MonoBehaviour
             _isOnePlayScream = false;
         }
     }
-    private void AnimateTriggerAction()
-    {
-        DOTween.Sequence()
-                .Append(_ActionFromTrigger.DOLocalMove(new Vector3(-2.3f, -0.5f, -2f), 2f))
-                .Append(_ActionFromTrigger.DOLocalMove(new Vector3(-7f, -0.5f, 5f), 1.5f))
-                .SetEase(Ease.Linear)
-                .SetDelay(_delayToPlaySound);
-    }
     private void PlaySound()
     {
+        if(_isHideObjects)
+            foreach (GameObject go in _hideObjects)
+                go.SetActive(false);
         _screamsSound.Play();
     }
     private void ShowScreamObject()

@@ -10,7 +10,7 @@ public class TriggerActionController : MonoBehaviour
 
     [SerializeField] private bool _isHideScream = false;
     [SerializeField] private float _delayHideScream = 1f;
-    [SerializeField] private GameObject _scream;
+    [SerializeField] private GameObject[] _screamObject;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +24,7 @@ public class TriggerActionController : MonoBehaviour
     }
     private void HideScream()
     {
-        _scream.SetActive(false);
+        foreach (var item in _screamObject)
+            item.SetActive(false);
     }
 }

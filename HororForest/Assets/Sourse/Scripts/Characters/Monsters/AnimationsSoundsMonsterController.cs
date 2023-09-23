@@ -6,7 +6,7 @@ public class AnimationsSoundsMonsterController : MonoBehaviour
     [SerializeField] private AudioClip[] _jumpStates;
     [SerializeField] private AudioSource _footAudio;
     [SerializeField] private Animator _animator;
-    private void FootStepS()
+    private void FootStep()
     {
         int randSound = Random.Range(0, _footSteps.Length);
         _footAudio.PlayOneShot(_footSteps[randSound]);
