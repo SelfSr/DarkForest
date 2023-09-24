@@ -9,6 +9,7 @@ public class ScreamSoundsController : MonoBehaviour
     [SerializeField] private AudioSource _screamsSound;
     [SerializeField] private bool _isHideObjects = false;
     [SerializeField] private GameObject[] _hideObjects;
+    [SerializeField] private float _delayToHideObjects;
 
     [Header("Scream")]
     [SerializeField] private bool _isShowScream = false;
@@ -35,9 +36,8 @@ public class ScreamSoundsController : MonoBehaviour
     }
     private void PlaySound()
     {
-        if(_isHideObjects)
-            foreach (GameObject go in _hideObjects)
-                go.SetActive(false);
+        if (_isHideObjects)
+            Invoke("HideObjects", _delayToHideObjects);
         _screamsSound.Play();
     }
     private void ShowScreamObject()
@@ -48,5 +48,10 @@ public class ScreamSoundsController : MonoBehaviour
     {
         foreach (var GO in _triggers)
             GO.SetActive(true);
+    }
+    private void HideObjects()
+    {
+        foreach (GameObject go in _hideObjects)
+            go.SetActive(false);
     }
 }
