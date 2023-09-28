@@ -18,6 +18,7 @@ public class CustomCharacterController : MonoBehaviour
     [SerializeField] private Rig _rig;
     [SerializeField] private Transform _aimTarget;
     [SerializeField] private float _targetRange = 0.5f;
+    [SerializeField] private AudioSource _audioSource;
 
     private void Start()
     {
@@ -27,6 +28,9 @@ public class CustomCharacterController : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+            _audioSource.Play();
+
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _mainCamera.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
         {
