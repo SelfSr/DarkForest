@@ -7,7 +7,7 @@ public class Skybox : MonoBehaviour
     [SerializeField] private bool isEnableDay = false;
     [SerializeField] private bool isEnableWind = false;
     [SerializeField] private WindZone _windZone;
-    public Color ambientLightColor = Color.white;
+    public Color ambientLightColor = Color.black;
 
     public void ChangeSkybox()
     {
