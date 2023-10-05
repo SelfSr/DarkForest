@@ -17,13 +17,13 @@ public class ScreamOnFiveLocation : MonoBehaviour
     {
         if (_isOnePlay)
         {
-            _audioSource[1].Play();
-            _isOnePlay = false;
-            _animator[0].SetBool("IsHade", true);
             while (_flashLight.spotAngle < 150)
                 _flashLight.spotAngle += 2f;
             Invoke("DisableFlashLight", 0.07f);
-            Invoke("HideScream", 1);
+            _audioSource[1].Play();
+            _isOnePlay = false;
+            _animator[0].SetBool("IsHade", true);
+            Invoke("HideScream", 0.9f);
         }
     }
     private void HideScream()
