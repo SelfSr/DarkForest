@@ -59,7 +59,7 @@ public class ScriptToShowScreamsOnThirdLocation : MonoBehaviour
 
     private IEnumerator ApproachAndRotate(Transform objTransform)
     {
-        while (Vector3.Distance(objTransform.position, mainCamera.transform.position) > 1f)
+        while (Vector3.Distance(objTransform.position, mainCamera.transform.position) > 1.5f)
         {
             objTransform.position = Vector3.MoveTowards(objTransform.position, mainCamera.transform.position, _approachSpeed * Time.deltaTime);
 

@@ -18,7 +18,7 @@ public class PickUpLesnikBook : MonoBehaviour
             {
                 _hidedObject.SetActive(false);
                 _showObject.SetActive(true);
-                _numberLesnikBook = 5;
+                _numberLesnikBook = 3;
             }
         }
     }
