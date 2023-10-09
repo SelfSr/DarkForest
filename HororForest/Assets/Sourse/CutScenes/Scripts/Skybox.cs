@@ -4,6 +4,7 @@ public class Skybox : MonoBehaviour
 {
     [SerializeField] Material newSkyboxMaterial;
     [SerializeField] private bool isEnableFog = true;
+    [SerializeField] private bool isDisableFog = true;
     [SerializeField] private bool isEnableDay = false;
     [SerializeField] private bool isEnableWind = false;
     [SerializeField] private WindZone _windZone;
@@ -25,6 +26,10 @@ public class Skybox : MonoBehaviour
         if (isEnableFog)
         {
             RenderSettings.fog = true;
+        }
+        if (isDisableFog)
+        {
+            RenderSettings.fog = false;
         }
         if (isEnableDay)
         {

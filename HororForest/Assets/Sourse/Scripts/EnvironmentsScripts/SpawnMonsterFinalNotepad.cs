@@ -13,7 +13,7 @@ public class SpawnMonsterFinalNotepad : MonoBehaviour
 
     private void Start()
     {
-        Invoke("SpawnEnemy", 10);
+        Invoke("SpawnEnemy", 40);
     }
 
     void SpawnEnemy()

@@ -5,8 +5,6 @@ public class EnemyFollowPlayer : MonoBehaviour
     public Transform target;
     [SerializeField] private SpawnMonsterFinalNotepad spawnMonsterFinalNotepad;
 
-    private bool isOnePlayCutscene = true;
-
     void Update()
     {
         if (target != null)
