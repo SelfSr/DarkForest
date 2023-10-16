@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.78431374, g: 0.7294118, b: 0.7294118, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: eac2ef371405749e0bd050b4c3272f16, type: 2}
   m_HaloStrength: 0.667
   m_FlareStrength: 1
   m_FlareFadeSpeed: 19.99
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 410d4f4e4f055ee4f9cc66d55f23e815, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 811b3af34b7b25f44a4f05495beb2462, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 1be5f5dfd9c53534fbb8280aac04185f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -3140,6 +3140,7 @@ MonoBehaviour:
   isDisableFog: 1
   isEnableDay: 1
   isEnableWind: 0
+  isEnableSkyboxSettings: 0
   _windZone: {fileID: 0}
   ambientLightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &207417007
@@ -12746,7 +12747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &619227182
 Transform:
   m_ObjectHideFlags: 0
@@ -21473,8 +21474,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.953, b: 0.803, a: 1}
-  m_Intensity: 2.5
+  m_Color: {r: 0.5471698, g: 0.5180562, b: 0.4258633, a: 1}
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21483,7 +21484,7 @@ Light:
     m_Type: 2
     m_Resolution: 1
     m_CustomResolution: -1
-    m_Strength: 0.7
+    m_Strength: 0.9
     m_Bias: 0
     m_NormalBias: 0
     m_NearPlane: 0.1
@@ -21531,8 +21532,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990935033}
-  m_LocalRotation: {x: -0.30028978, y: -0.6508744, z: 0.31392574, w: -0.6226069}
-  m_LocalPosition: {x: 315.5019, y: 118.33798, z: 400.14865}
+  m_LocalRotation: {x: 0.39548704, y: -0.028926224, z: 0.012461489, w: 0.9179314}
+  m_LocalPosition: {x: 366.62076, y: 23.115263, z: 365.9943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25306,6 +25307,7 @@ MonoBehaviour:
   isDisableFog: 0
   isEnableDay: 1
   isEnableWind: 0
+  isEnableSkyboxSettings: 0
   _windZone: {fileID: 0}
   ambientLightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1237542915
@@ -33651,11 +33653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a065f0370eccc4289803468347ac63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  newSkyboxMaterial: {fileID: 2100000, guid: eac2ef371405749e0bd050b4c3272f16, type: 2}
   isEnableFog: 0
   isDisableFog: 0
   isEnableDay: 1
   isEnableWind: 1
+  isEnableSkyboxSettings: 0
   _windZone: {fileID: 410565924}
   ambientLightColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &1664627097
@@ -37702,6 +37705,8 @@ MonoBehaviour:
   - {fileID: 652656781}
   _cutSceneObjectHide:
   - {fileID: 1361915463}
+  - {fileID: 1489736412}
+  - {fileID: 6097521}
 --- !u!1 &1865602185
 GameObject:
   m_ObjectHideFlags: 0
@@ -37819,7 +37824,6 @@ MonoBehaviour:
   - {fileID: 5738814632919086361}
   - {fileID: 1489736412}
   - {fileID: 6097521}
-  - {fileID: 1489736412}
   _showObject:
   - {fileID: 990935033}
   - {fileID: 4577188212977492190}

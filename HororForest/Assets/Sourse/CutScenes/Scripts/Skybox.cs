@@ -7,6 +7,7 @@ public class Skybox : MonoBehaviour
     [SerializeField] private bool isDisableFog = true;
     [SerializeField] private bool isEnableDay = false;
     [SerializeField] private bool isEnableWind = false;
+    [SerializeField] private bool isEnableSkyboxSettings = false;
     [SerializeField] private WindZone _windZone;
     public Color ambientLightColor = Color.black;
 
@@ -38,6 +39,10 @@ public class Skybox : MonoBehaviour
         if(isEnableWind)
         {
             _windZone.windTurbulence = 1f;
-        }    
+        }
+        if(isEnableSkyboxSettings)
+        {
+            RenderSettings.ambientIntensity = 0.2f;
+        }
     }
 }
